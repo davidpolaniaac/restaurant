@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>RESTAURANTE</h1>
+    <p class="lead">Reserva de restaurante online.</p>
+    @using Microsoft.AspNet.Identity
+    @if (Request.IsAuthenticated==false)
+    {
+        <p><a href="/Reservas/Create" class="btn btn-primary btn-lg">Reserva &raquo;</a></p>
+    }
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Medios de pago</h2>
+        <p>
+            tarjetas de crédito nacionales e internacionales, efectivo, dólares, pago desde cualquier lugar del mundo a través de su tarjeta de crédito con el sistema no presencial.
+        </p>
+        <p><a class="btn btn-default" href="#">más &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Recuerda</h2>
+        <p>Recuerda llegar al menos 15 minutos antes de la hora reservada. Si llegas después de dicha hora, la reserva se cancela automáticamente.</p>
+        <p><a class="btn btn-default" href="#">más &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Confirmación</h2>
+        <p>Tu reserva está sujeta a disponibilidad de mesas; enviar este formulario no garantiza que ésta sea aceptada. Recuerda que la ÚNICA forma de que tu reserva quede confirmada es con la emisión de un CÓDIGO DE CONFIRMACIÓN.</p>
+        <p><a class="btn btn-default" href="#">más &raquo;</a></p>
+    </div>
+</div>
+
+@{string myvar = "hello there !";}
+
+<script type="text/javascript">
+    function Messsage() {
+        alert('@myvar');    // should show "hello there"
+    }
+</script>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Restaurante.Models.Sede>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-large" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreSede)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreSede)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdSede }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdSede }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdSede })
+        </td>
+    </tr>
+}
+
+</table>
